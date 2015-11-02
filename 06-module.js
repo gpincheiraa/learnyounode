@@ -5,15 +5,14 @@ module.exports = function(dir, ext, callback) {
   fs.readdir(dir,function(err, data){
     
     if(err) {
-      callback(err, null);
+      return callback(err);
     }
     
-    var filtered = list
+    var filtered = data
                   .filter(function(f){
                     return path.extname(f) === '.' + ext;
-                  })
-                  .join('\n');
-    
+                  });
+
     callback(null, filtered);
   
   });

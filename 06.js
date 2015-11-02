@@ -3,7 +3,7 @@ var filter = require('./06-module'),
     ext = process.argv[3];
 
 filter(dir, ext, function (err, filteredList) {
-  console.log(filteredList);
+  console.log(filteredList.join('\n'));
 });
 
 
